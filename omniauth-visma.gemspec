@@ -7,6 +7,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{OmniAuth strategy for Visma eAccounting .}
   gem.summary       = %q{OmniAuth strategy for Visma eAccounting .}
   gem.homepage      = "https://github.com/espen/omniauth-visma"
+  gem.license = 'MIT'
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
