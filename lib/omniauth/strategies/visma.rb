@@ -4,13 +4,22 @@ require 'multi_json'
 module OmniAuth
   module Strategies
     class Visma < OmniAuth::Strategies::OAuth2
-      option :name, "visma"
-
-      option :client_options, {
-        :site => "https://eaccountingapi-sandbox.test.vismaonline.com/v2/",
-        :authorize_url => "https://identity-sandbox.test.vismaonline.com/connect/authorize",
-        :token_url => "https://identity-sandbox.test.vismaonline.com/connect/token"
+      AUTH_URLS = {
+        :sandbox => {
+            :site => "https://eaccountingapi-sandbox.test.vismaonline.com/v2/",
+            :authorize_url => "https://identity-sandbox.test.vismaonline.com/connect/authorize",
+            :token_url => "https://identity-sandbox.test.vismaonline.com/connect/token"
+          },
+        :production => {
+            :site => "https://eaccountingapi.vismaonline.com/v2/",
+            :authorize_url => "https://identity.vismaonline.com/connect/authorize",
+            :token_url => "https://identity.vismaonline.com/connect/token"
+          }
       }
+
+      option :name, "visma"
+      option :environment, "sandbox"
+      option :client_options, AUTH_URLS[:sandbox]
 
       info do
         {
@@ -37,12 +46,22 @@ module OmniAuth
         @raw_info ||= access_token.get('/v2/companysettings').parsed
       end
 
+      def request_phase
+        set_urls
+        super
+      end
+
       private
+
+      def set_urls
+        options.client_options = AUTH_URLS[options.environment].merge(options.client_options)
+      end
 
       def callback_url
         full_host + script_name + callback_path
       end
 
     end
+
   end
 end
