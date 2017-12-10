@@ -18,4 +18,4 @@ Based on [omniauth-37signals](https://github.com/tallgreentree/omniauth-37signal
 
 ## License
 
-Copyright (c) 2017 by Espen Antonsen. [MIT License](LICENSE.MD)
+Copyright (c) 2017 by Espen Antonsen. [MIT License](LICENSE)
