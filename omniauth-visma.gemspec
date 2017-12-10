@@ -4,8 +4,8 @@ require File.expand_path('../lib/omniauth-visma/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Espen Antonsen"]
   gem.email         = ["espen@inspired.no"]
-  gem.description   = %q{OmniAuth strategy for Visma eAccounting .}
-  gem.summary       = %q{OmniAuth strategy for Visma eAccounting .}
+  gem.description   = %q{OmniAuth strategy for Visma eAccounting.}
+  gem.summary       = %q{OmniAuth strategy for Visma eAccounting.}
   gem.homepage      = "https://github.com/espen/omniauth-visma"
   gem.license = 'MIT'
 
