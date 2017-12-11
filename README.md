@@ -9,7 +9,7 @@ For more information about the API see https://developer.vismaonline.com/.
 ## Basic Usage
 
     use OmniAuth::Builder do
-      provider "visma", ENV['VISMA_CLIENT_ID'], ENV['VISMA_CLIENT_SECRET'], scope: 'offline_access ea:api', environment: 'production'
+      provider "visma", ENV['VISMA_CLIENT_ID'], ENV['VISMA_CLIENT_SECRET'], scope: 'offline_access ea:api', environment: :production
     end
 
 The default environment is 'sandbox'.
