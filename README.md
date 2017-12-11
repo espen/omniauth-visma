@@ -12,7 +12,7 @@ For more information about the API see https://developer.vismaonline.com/.
       provider "visma", ENV['VISMA_CLIENT_ID'], ENV['VISMA_CLIENT_SECRET'], scope: 'offline_access ea:api'
     end
 
-The default environment is ```:production```. For testing you can use the sandbox environment by specifying ```:sandbox``` as ```environment``` in the provider setup.
+The default environment is ```:production```. For testing you can use the sandbox environment by specifying ```:sandbox``` as ```environment``` in the provider setup. If changing environment after initalizing then call ```change_environment```.
 
 ## Credits
 

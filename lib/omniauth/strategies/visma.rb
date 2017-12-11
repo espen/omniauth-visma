@@ -50,6 +50,10 @@ module OmniAuth
         @raw_info ||= access_token.get('/v2/companysettings').parsed
       end
 
+      def change_environment
+        update_default_environment_urls
+      end
+
       private
 
       def update_default_environment_urls

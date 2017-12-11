@@ -49,6 +49,12 @@ describe OmniAuth::Strategies::Visma do
       subject.client.authorize_url.should eq("https://identity-sandbox.test.vismaonline.com/connect/authorize")
     end
 
+    it 'should set environment after init' do
+      subject.options.environment = :sandbox
+      subject.change_environment
+      subject.client.authorize_url.should eq("https://identity-sandbox.test.vismaonline.com/connect/authorize")
+    end
+
   end
 
 end
