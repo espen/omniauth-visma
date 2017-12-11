@@ -18,8 +18,8 @@ module OmniAuth
       }
 
       option :name, "visma"
-      option :environment, :sandbox
-      option :client_options, AUTH_URLS[:sandbox]
+      option :environment, :production
+      option :client_options, AUTH_URLS[:production]
 
       info do
         {
