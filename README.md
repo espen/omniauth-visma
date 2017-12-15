@@ -6,6 +6,8 @@ See the [authorization documentation](https://developer.vismaonline.com/#eAccoun
 
 For more information about the API see https://developer.vismaonline.com/.
 
+To easily use the API from Ruby see [VismaEaccounting](https://github.com/espen/visma_eaccounting).
+
 ## Basic Usage
 
     use OmniAuth::Builder do
