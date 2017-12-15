@@ -25,8 +25,8 @@ Example:
 ```ruby
 if Time.at( visma_access_token_expires_at ).past?
   oauth = OmniAuth::Strategies::Visma.new(nil, {
-    client_id: visma_client_id,
-    client_secret: visma_secret
+    client_id: ENV['VISMA_CLIENT_ID'],
+    client_secret: ENV['VISMA_CLIENT_SECRET']
   }
   token = OAuth2::AccessToken.new(
     oauth.client,
