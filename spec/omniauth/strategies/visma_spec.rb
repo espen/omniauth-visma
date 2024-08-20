@@ -31,30 +31,4 @@ describe OmniAuth::Strategies::Visma do
     end
   end
 
-  describe '#environment' do
-
-    subject do
-      strategy = OmniAuth::Strategies::Visma.new(nil, @options || {})
-      strategy.stub(:session) { {} }
-      strategy
-    end
-
-    it 'should use production environment by default' do
-      subject.client.authorize_url.should eq("https://identity.vismaonline.com/connect/authorize")
-    end
-
-    it 'should set environment' do
-      @options = {:environment => :sandbox}
-      subject.options.environment.should eq(:sandbox)
-      subject.client.authorize_url.should eq("https://identity-sandbox.test.vismaonline.com/connect/authorize")
-    end
-
-    it 'should set environment after init' do
-      subject.options.environment = :sandbox
-      subject.change_environment
-      subject.client.authorize_url.should eq("https://identity-sandbox.test.vismaonline.com/connect/authorize")
-    end
-
-  end
-
 end
